@@ -1,0 +1,158 @@
+USE [CosmeticShop]
+GO
+
+/****** Object:  Table [dbo].[BillDetailsTable]    Script Date: 03/01/2021 17:14:21 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[BillDetailsTable](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[BillId] [nvarchar](50) NULL,
+	[ProductName] [nvarchar](100) NULL,
+	[Price] [int] NULL,
+	[Quantity] [int] NULL,
+	[Total] [int] NULL
+) ON [PRIMARY]
+
+GO
+
+USE [CosmeticShop]
+GO
+
+/****** Object:  Table [dbo].[BillInfoTable]    Script Date: 03/01/2021 17:14:28 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[BillInfoTable](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[BillId] [nvarchar](50) NULL,
+	[CustomerName] [nvarchar](100) NULL,
+	[ContactNo] [nvarchar](10) NULL,
+	[Total] [int] NULL,
+	[Discount] [int] NULL,
+	[DiscountPrice] [int] NULL,
+	[GrandTotal] [int] NULL,
+	[BillDate] [date] NULL
+) ON [PRIMARY]
+
+GO
+
+USE [CosmeticShop]
+GO
+
+/****** Object:  Table [dbo].[CustomerTable]    Script Date: 03/01/2021 17:14:33 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[CustomerTable](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[CustomerId] [nvarchar](20) NULL,
+	[CustomerName] [nvarchar](50) NULL,
+	[EmailAddress] [nvarchar](50) NULL,
+	[Contact] [nvarchar](10) NULL,
+	[Address] [nvarchar](max) NULL
+) ON [PRIMARY]
+
+GO
+
+USE [CosmeticShop]
+GO
+
+/****** Object:  Table [dbo].[EmployeeTable]    Script Date: 03/01/2021 17:14:37 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[EmployeeTable](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[EmployeeId] [nvarchar](20) NULL,
+	[EmployeeName] [nvarchar](100) NULL,
+	[Email] [nvarchar](50) NULL,
+	[Contact] [nvarchar](10) NULL,
+	[Gender] [nvarchar](6) NULL,
+	[Address] [nvarchar](max) NULL,
+	[Salary] [int] NULL,
+	[DateOfJoin] [date] NULL
+) ON [PRIMARY]
+
+GO
+
+USE [CosmeticShop]
+GO
+
+/****** Object:  Table [dbo].[OrderTable]    Script Date: 03/01/2021 17:14:42 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[OrderTable](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[OrderId] [nvarchar](50) NULL,
+	[ProductId] [nvarchar](50) NULL,
+	[ProductName] [nvarchar](50) NULL,
+	[Brands] [nvarchar](50) NULL,
+	[Quantity] [int] NULL,
+	[UOM] [nvarchar](50) NULL,
+	[CostPrice] [int] NULL,
+	[TotalPrice] [int] NULL,
+	[OrderDate] [date] NULL
+) ON [PRIMARY]
+
+GO
+
+USE [CosmeticShop]
+GO
+
+/****** Object:  Table [dbo].[StockTable]    Script Date: 03/01/2021 17:14:47 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[StockTable](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ProductId] [nvarchar](50) NULL,
+	[ProductName] [nvarchar](50) NULL,
+	[Brands] [nvarchar](50) NULL,
+	[Quantity] [int] NULL,
+	[UOM] [nvarchar](50) NULL,
+	[Price] [int] NULL,
+	[TotalPrice] [int] NULL,
+	[StockDate] [date] NULL
+) ON [PRIMARY]
+
+GO
+
+USE [CosmeticShop]
+GO
+
+/****** Object:  Table [dbo].[UserTable]    Script Date: 03/01/2021 17:14:52 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[UserTable](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[UserName] [nvarchar](50) NULL,
+	[Password] [nvarchar](50) NULL,
+	[UserType] [nvarchar](50) NULL
+) ON [PRIMARY]
+
+GO
+
